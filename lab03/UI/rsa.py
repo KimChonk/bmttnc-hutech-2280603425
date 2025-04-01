@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\ui\caesar.ui'
+# Form implementation generated from reading ui file '.\ui\rsa.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -12,53 +12,63 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import os
 os.environ['QT_QPA_PLATFORM_PLUGIN_PATH'] = '../platforms'
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(325, 333)
-        MainWindow.setStyleSheet("")
+        MainWindow.resize(720, 364)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(100, 10, 181, 41))
+        self.label.setGeometry(QtCore.QRect(160, 10, 141, 41))
         font = QtGui.QFont()
         font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
         self.label.setFont(font)
-        self.label.setStyleSheet("")
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(20, 60, 61, 16))
+        self.label_2.setGeometry(QtCore.QRect(20, 70, 61, 16))
         self.label_2.setObjectName("label_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.label_3.setGeometry(QtCore.QRect(20, 140, 61, 16))
+        self.label_3.setGeometry(QtCore.QRect(20, 170, 61, 16))
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(20, 170, 61, 16))
+        self.label_4.setGeometry(QtCore.QRect(350, 180, 61, 16))
         self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(350, 80, 61, 16))
+        self.label_5.setObjectName("label_5")
         self.txt_plaintext = QtWidgets.QTextEdit(self.centralwidget)
-        self.txt_plaintext.setGeometry(QtCore.QRect(90, 60, 211, 71))
+        self.txt_plaintext.setGeometry(QtCore.QRect(83, 70, 251, 81))
         self.txt_plaintext.setObjectName("txt_plaintext")
         self.txt_ciphertext = QtWidgets.QTextEdit(self.centralwidget)
-        self.txt_ciphertext.setGeometry(QtCore.QRect(90, 170, 211, 71))
+        self.txt_ciphertext.setGeometry(QtCore.QRect(80, 170, 251, 81))
         self.txt_ciphertext.setObjectName("txt_ciphertext")
-        self.txt_key = QtWidgets.QLineEdit(self.centralwidget)
-        self.txt_key.setGeometry(QtCore.QRect(90, 140, 211, 20))
-        self.txt_key.setObjectName("txt_key")
+        self.txt_information = QtWidgets.QTextEdit(self.centralwidget)
+        self.txt_information.setGeometry(QtCore.QRect(433, 80, 251, 81))
+        self.txt_information.setObjectName("txt_information")
+        self.txt_signature = QtWidgets.QTextEdit(self.centralwidget)
+        self.txt_signature.setGeometry(QtCore.QRect(430, 180, 251, 81))
+        self.txt_signature.setObjectName("txt_signature")
         self.btn_encrypt = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_encrypt.setGeometry(QtCore.QRect(90, 260, 75, 23))
-        self.btn_encrypt.setStyleSheet("selection-color: rgb(101, 255, 99);\n"
-"background-color: rgb(201, 253, 255);")
+        self.btn_encrypt.setGeometry(QtCore.QRect(70, 280, 75, 23))
         self.btn_encrypt.setObjectName("btn_encrypt")
         self.btn_decrypt = QtWidgets.QPushButton(self.centralwidget)
-        self.btn_decrypt.setGeometry(QtCore.QRect(230, 260, 75, 23))
-        self.btn_decrypt.setStyleSheet("background-color: rgb(190, 247, 255);\n"
-"selection-color: rgb(101, 255, 99);")
+        self.btn_decrypt.setGeometry(QtCore.QRect(250, 280, 75, 23))
         self.btn_decrypt.setObjectName("btn_decrypt")
+        self.btn_verify = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_verify.setGeometry(QtCore.QRect(600, 290, 75, 23))
+        self.btn_verify.setObjectName("btn_verify")
+        self.btn_sign = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_sign.setGeometry(QtCore.QRect(420, 290, 75, 23))
+        self.btn_sign.setObjectName("btn_sign")
+        self.btn_generatekeys = QtWidgets.QPushButton(self.centralwidget)
+        self.btn_generatekeys.setGeometry(QtCore.QRect(360, 30, 101, 23))
+        self.btn_generatekeys.setObjectName("btn_generatekeys")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 325, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 720, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -71,13 +81,16 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "CAESAR CIPHER"))
-        self.label_2.setText(_translate("MainWindow", "Plain Text :"))
-        self.label_3.setText(_translate("MainWindow", "Key :"))
-        self.label_4.setText(_translate("MainWindow", "CipherText :"))
+        self.label.setText(_translate("MainWindow", "RSA CIPHER"))
+        self.label_2.setText(_translate("MainWindow", "Plain Text:"))
+        self.label_3.setText(_translate("MainWindow", "CipherText:"))
+        self.label_4.setText(_translate("MainWindow", "Signature"))
+        self.label_5.setText(_translate("MainWindow", "Information"))
         self.btn_encrypt.setText(_translate("MainWindow", "Encrypt"))
         self.btn_decrypt.setText(_translate("MainWindow", "Decrypt"))
-
+        self.btn_verify.setText(_translate("MainWindow", "Verify"))
+        self.btn_sign.setText(_translate("MainWindow", "Sign"))
+        self.btn_generatekeys.setText(_translate("MainWindow", "Generate Keys"))
 
 
 if __name__ == "__main__":
